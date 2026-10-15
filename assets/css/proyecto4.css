@@ -1,0 +1,133 @@
+:root {
+    --color-fondo: #1b2e22;
+    --color-texto-principal: #ffffff;
+    --color-texto-secundario: #a3c2ac;
+    --color-primario: #4ade80;
+    --color-secundario: #60a5fa;
+    --color-borde: #2d4e38;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    display: flex;
+    justify-content: center;
+    padding: 3rem 1rem;
+    min-height: 100vh;
+}
+
+.contenedor-principal {
+    max-width: 650px;
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+header h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: var(--color-texto-secundario);
+    font-size: 0.95rem;
+}
+
+/* Estructura de Línea de Tiempo */
+.grupo-linea-tiempo {
+    position: relative;
+    padding-left: 2rem;
+    border-left: 2px solid var(--color-borde);
+    padding-bottom: 2.5rem;
+}
+
+/* Evitar que el último bloque mantenga la línea vertical abajo */
+.grupo-linea-tiempo:last-of-type {
+    padding-bottom: 1rem;
+}
+
+.fecha-linea-tiempo {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-texto-secundario);
+    margin-bottom: 1.2rem;
+    position: relative;
+}
+
+/* Alineación  del círculo en la línea vertical */
+.fecha-linea-tiempo::before {
+    content: '';
+    position: absolute;
+    left: -2.35rem; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: var(--color-primario);
+    box-shadow: 0 0 8px rgba(74, 222, 128, 0.6);
+}
+
+.lista-cambios {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.item-cambio {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    font-size: 0.95rem;
+}
+
+/* Etiquetas planas sin fondo pesado */
+.etiqueta {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    min-width: 48px;
+    text-align: center;
+}
+
+.etiqueta-caracteristica {
+    background-color: rgba(74, 222, 128, 0.15);
+    color: var(--color-primario);
+}
+
+.etiqueta-correccion {
+    background-color: rgba(96, 165, 250, 0.15);
+    color: var(--color-secundario);
+}
+
+.contenedor-enlace {
+    padding-left: 2rem;
+    margin-top: 1.5rem;
+}
+
+.boton-historial {
+    display: inline-block;
+    color: var(--color-primario);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: opacity 0.2s ease;
+}
+
+.boton-historial:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
